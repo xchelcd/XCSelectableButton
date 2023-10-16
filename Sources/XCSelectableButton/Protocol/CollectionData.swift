@@ -7,6 +7,6 @@
 
 import Foundation
 
-protocol CollectionData: SelectableNameProtocol {
+public protocol CollectionData: SelectableNameProtocol {
     func toString() -> String
 }
