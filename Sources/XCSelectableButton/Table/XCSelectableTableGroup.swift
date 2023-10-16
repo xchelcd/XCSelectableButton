@@ -8,7 +8,7 @@
 import UIKit
 
 @available(iOS 15.0, *)
-public class SelectableTableGroup<D>: UITableView, UITableViewDelegate, UITableViewDataSource where D: SelectableDelegate {
+public class XCSelectableTableGroup<D>: UITableView, UITableViewDelegate, UITableViewDataSource where D: SelectableDelegate {
     
     private weak var selectionDelegate: D?
     
@@ -17,7 +17,7 @@ public class SelectableTableGroup<D>: UITableView, UITableViewDelegate, UITableV
     
     var allCells: Set<SelectableTableCellGroup> = Set()
     
-    init(type: XCSelectableButton.SelectableType, list: [D.T], delegate: D?) where D: SelectableDelegate {
+    public init(type: XCSelectableButton.SelectableType, list: [D.T], delegate: D?) where D: SelectableDelegate {
         super.init(frame: .zero, style: .plain)
         self.type = type
         self.list = list

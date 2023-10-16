@@ -351,7 +351,7 @@ extension XCSelectableButton {
     /// - Parameters:
     ///   - table: current table
     ///   - selectableButton: new selection
-    func removeSelection<D>(_ table: SelectableTableGroup<D>, selectableButton: XCSelectableButton) {
+    func removeSelection<D>(_ table: XCSelectableTableGroup<D>, selectableButton: XCSelectableButton) {
         let cellsChecked = table.allCells.filter({ $0.selectableButton?.isChecked() ?? false })
         if cellsChecked.count != 1 {
             let cellToUncheck = cellsChecked.first(where: { c in

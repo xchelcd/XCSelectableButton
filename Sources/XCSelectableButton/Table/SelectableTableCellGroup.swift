@@ -20,7 +20,7 @@ public class SelectableTableCellGroup: UITableViewCell {
     
     public var selectableButton: XCSelectableButton?
     
-    func bindData<D>(type: XCSelectableButton.SelectableType, data: D.T?, delegate: D?, table: SelectableTableGroup<D>) where D: SelectableDelegate {
+    func bindData<D>(type: XCSelectableButton.SelectableType, data: D.T?, delegate: D?, table: XCSelectableTableGroup<D>) where D: SelectableDelegate {
         guard let data = data as? SelectableNameProtocol else {
             return
         }
@@ -52,7 +52,7 @@ public class SelectableTableCellGroup: UITableViewCell {
 
 @available(iOS 15.0, *)
 extension SelectableTableCellGroup {
-    func removeSelection<D>(_ table: SelectableTableGroup<D>) {
+    func removeSelection<D>(_ table: XCSelectableTableGroup<D>) {
         let cellsChecked = table.allCells.filter({ $0.selectableButton?.isChecked() ?? false })
         if cellsChecked.count != 1 {
             let cellToUncheck = cellsChecked.first(where: { c in

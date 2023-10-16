@@ -8,14 +8,14 @@
 import UIKit
 
 @available(iOS 15.0, *)
-public class SelectableCollectionGroup<D>: UICollectionView, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout where D: SelectableDelegate {
+public class XCSelectableCollectionGroup<D>: UICollectionView, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout where D: SelectableDelegate {
     
     weak private var selectionDelegate: D?
     
     private var list: [D.T] = []
     private var type: XCSelectableButton.SelectableType = .chip
     
-    init(type: XCSelectableButton.SelectableType, list: [D.T], delegate: D?) where D: SelectableDelegate {
+    public init(type: XCSelectableButton.SelectableType, list: [D.T], delegate: D?) where D: SelectableDelegate {
         let layout = UICollectionViewFlowLayout()
         layout.minimumLineSpacing = 10
         layout.minimumInteritemSpacing = 10
@@ -88,7 +88,7 @@ public class SelectableCollectionGroup<D>: UICollectionView, UICollectionViewDel
 }
 
 @available(iOS 15.0, *)
-extension SelectableCollectionGroup {
+extension XCSelectableCollectionGroup {
     private func setupCollectionView() {
         self.delegate = self
         self.dataSource = self
