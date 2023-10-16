@@ -5,6 +5,9 @@ With this lib you can add programatically radios buttons, checkbox or chip. You 
 
 ## How to add the library to your project
 
+#### Requirements
+iOS 15
+
 ## How to implement
 
 ### Step 1: Prepare your object class/struct
