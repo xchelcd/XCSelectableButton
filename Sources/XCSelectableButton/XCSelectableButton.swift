@@ -107,7 +107,7 @@ public class XCSelectableButton: UIButton {
         }
     }
     
-    func isChecked() -> Bool {
+    public func isChecked() -> Bool {
         currentState
     }
     
@@ -333,8 +333,8 @@ public class XCSelectableButton: UIButton {
         self.isSelected = currentState
     }
     
-    func toString() -> String {
-        "[id: \(id)] [title: \(title)] [state: \(currentState)]"
+    public func toString() -> String {
+        "[buttonId: \(id)] [title: \(title)] [state: \(currentState)]"
     }
     
     required init?(coder: NSCoder) {
