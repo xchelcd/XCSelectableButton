@@ -61,7 +61,7 @@ public class XCSelectableButton: UIButton {
         }
     }
     
-    enum SelectableType: String {
+    public enum SelectableType: String {
         case radioButton = "radiobutton"
         case checkbox = "checkbox"
         case chip = "chip"
